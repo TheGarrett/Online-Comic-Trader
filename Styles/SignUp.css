@@ -1,0 +1,67 @@
+/* Page Sytling */
+body {
+  margin: 0;
+  background-image: url("https://wallpaper.wiki/wp-content/uploads/2017/05/wallpaper.wiki-HD-Comic-Book-Wallpaper-PIC-WPE005376.png");
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: #0E0B35;
+}
+
+label {
+  color: white;
+}
+
+.form-row {
+  margin-top: 40px;
+}
+
+.password-container {
+  margin-top: 30px;
+}
+
+.question-2-container {
+  padding-left: 0;
+}
+
+.sign-up-container {
+  padding: 10%;
+}
+
+.sign-up-title {
+  color: white;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.sign-up-button {
+  float: right;
+  margin-right: 0%;
+  margin-top: 15px;
+  width: 40%;
+}
+
+/* Desktop View */
+@media screen and (min-width: 950px) {
+
+  .password-container {
+    margin-top: 62px;
+  }
+
+  .question-2-container {
+    padding-left: 45px;
+  }
+
+  .sign-up-button {
+    float: right;
+    margin-right: 0%;
+    margin-top: 40px;
+    width: 15%;
+  }
+
+}

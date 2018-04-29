@@ -1,0 +1,55 @@
+.display-col {
+  padding: 30px 0;
+  border: 1px solid grey;
+  background-color: rgb(218, 241, 241);
+  text-align: center;
+}
+
+.comic-container {
+  margin-left: 0;
+}
+
+.comic-column {
+  flex: 0;
+  flex-basis: 0;
+  margin-right: 6%;
+}
+
+.comic-row {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.wrap { 
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.comic-box {
+  width: 150px;
+}
+
+/* Desktop View */
+@media screen and (min-width: 950px) {
+  .comic-column {
+    flex: 0;
+    flex-basis: 0;
+    margin-right: 5%;
+  }
+
+  .comic-container {
+    margin-left: 35px;
+  }
+
+  .comic-box {
+    width: 200px;
+  }
+}
