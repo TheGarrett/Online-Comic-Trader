@@ -1,0 +1,92 @@
+/* Page Sytling */
+body {
+  margin: 0;
+  background-image: url("https://wallpaper.wiki/wp-content/uploads/2017/05/wallpaper.wiki-HD-Comic-Book-Wallpaper-PIC-WPE005376.png");
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: #0E0B35;
+}
+
+.login-container {
+  padding: 15%;
+}
+
+.logo-container {
+  display: list-item;
+  justify-content: center;
+  border-right: none;
+}
+
+.login-form-container {
+  padding-left: 10%;
+  padding-top: 5%;
+}
+
+.logo-icon {
+  font-size: 10em;
+  color: white;
+  margin-left: 30%;
+}
+
+a:hover {
+  color: white;
+}
+
+.logo-text {
+  font-size: 33px;
+  margin-top: -10%;
+  margin-left: 14%;
+  font-weight: bold;
+  color: white;
+}
+
+label {
+  color: white;
+}
+
+.login-button {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.Sign-up-link {
+  color: white;
+  margin-top: 5%;
+  position: absolute;
+}
+
+/* Desktop View */
+@media screen and (min-width: 950px) {
+  .logo-container {
+    border-right: 3px solid red;
+  }
+
+  .logo-icon {
+    font-size: 10em;
+    color: white;
+    margin-left: 24%;
+  }
+
+  .logo-text {
+    font-size: 35px;
+    margin-top: -5%;
+    margin-left: 14%;
+    font-weight: bold;
+    color: white;
+  }
+
+  .login-form-container {
+    padding-left: 10%;
+  }
+
+  .login-button {
+    margin-top: 15px;
+    width: 25%;
+  }
+
+  .Sign-up-link {
+    color: white;
+    margin-top: 1.5%;
+    position: absolute;
+  }
+}

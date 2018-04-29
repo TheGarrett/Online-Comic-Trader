@@ -1,0 +1,56 @@
+.mainContainer {
+  padding-right: 4%;
+}
+
+.charity-container {
+  margin-left: 0;
+  margin-top: 0;
+  width: 100%;
+}
+
+.custom-columns {
+  width: 100%;
+}
+
+.img-container {
+  display: none;
+}
+
+/* Desktop View */
+@media screen and (min-width: 950px) {
+
+  .charity-container {
+    margin-left: 35px;
+    margin-top: 50px;
+    width: 100%;
+  }
+
+  .account-container {
+    margin-left: 35px;
+  }
+
+  .charity-image {
+    background-image: url("http://www.cmft.nhs.uk/media/385852/humphrey.jpg");
+    background-size: cover;
+    width: 180px;
+    height: 170px;
+    border: 2px solid;
+    border-radius: 310px;
+  }
+
+  .custom-columns {
+    flex: none;
+    flex-basis: none;
+    width: 83%;
+  }
+
+  .img-container {
+    display: flex;
+    width: 17%;
+    padding-top: 5px;
+  }
+
+  .text-container {
+    padding-left: 25px;
+  }
+}
