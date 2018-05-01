@@ -1,7 +1,7 @@
 /* Page Sytling */
 body {
   margin: 0;
-  background-image: url("https://wallpaper.wiki/wp-content/uploads/2017/05/wallpaper.wiki-HD-Comic-Book-Wallpaper-PIC-WPE005376.png");
+  background-image: url("../Images/webBackground.png");
   background-size: cover;
   background-blend-mode: overlay;
   background-color: #0E0B35;
