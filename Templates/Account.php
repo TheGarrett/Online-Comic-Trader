@@ -26,7 +26,7 @@
       <h1>Account</h1>
 
       <div class="account-container">
-        <form method="post" action="login.php">
+        <form method="post" action="../PHP/update.php">
         
           <!-- Suggestion Off/On Selection -->
           <div class="row">
@@ -36,12 +36,12 @@
             <div class="column form-columns form-option-1">
               <div class="radio">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="True" checked>
+                  <input type="radio" name="suggestion" id="optionsRadios1" value="1" checked>
                   Yes
                 </label>
 
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="No">
+                  <input type="radio" name="suggestion" id="optionsRadios2" value="0">
                   No
                 </label>
               </div>
@@ -54,12 +54,22 @@
               <label for="exampleFormControlSelect2">Top comic character:</label>
             </div>
             <div class="column form-columns form-option-container">
-              <select multiple class="form-control" id="exampleFormControlSelect2">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+              <select name="character" class="form-control" id="exampleFormControlSelect2">
+                <?php
+                  require '../PHP/connection.php';
+
+                  $sql = "SELECT DISTINCT comic_lead_character FROM comic_table";
+                  $result = $conn->query($sql);
+
+                  if ($result->num_rows > 0) {
+                    // Displays data in table brought back from query
+                    while($row = $result->fetch_assoc()) {
+                      echo "<option value='". $row["comic_lead_character"] ."'>". $row["comic_lead_character"] ."</option>";
+                    }
+                  } else {
+                    echo "<option>No Characters</option>";
+                  }
+                ?>
               </select>
             </div>
           </div>
@@ -70,12 +80,22 @@
               <label for="exampleFormControlSelect2">Top comic genre:</label>
             </div>
             <div class="column form-columns form-option-container">
-              <select multiple class="form-control" id="exampleFormControlSelect2">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+              <select name="genre" class="form-control" id="exampleFormControlSelect2">
+                <?php
+                  require '../PHP/connection.php';
+
+                  $sql = "SELECT DISTINCT comic_genre FROM comic_table";
+                  $result = $conn->query($sql);
+
+                  if ($result->num_rows > 0) {
+                    // Displays data in table brought back from query
+                    while($row = $result->fetch_assoc()) {
+                      echo "<option value='". $row["comic_genre"] ."'>". $row["comic_genre"] ."</option>";
+                    }
+                  } else {
+                    echo "<option>No Genres</option>";
+                  }
+                ?>
               </select>
             </div>
           </div>

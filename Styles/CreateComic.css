@@ -1,0 +1,40 @@
+label {
+  width: 100%;
+}
+
+.add-comic-container {
+  margin-left: 0;
+  margin-top: 35px;
+}
+
+.row {
+  margin-bottom: 25px;
+}
+
+.btn-container {
+  float: right;
+}
+
+.action-btn {
+  width: 120px;
+  height: 40px;
+  padding: 9px 12px;
+  border-color: black;
+}
+
+.mainContainer {
+  padding-left: 4%;
+  padding-top: 1%;
+  padding-right: 4%;
+}
+
+@media screen and (min-width: 950px) {
+
+  label {
+    width: 20%;
+  }
+
+  .add-comic-container {
+    margin-left: 35px;
+  }
+}

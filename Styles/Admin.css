@@ -1,0 +1,22 @@
+.admin-container {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 35px;
+  padding-bottom: 2%;
+  overflow: scroll;
+}
+
+.textLink {
+  text-decoration: none;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+@media screen and (min-width: 950px) {
+
+  .admin-container {
+    margin-left: 35px;
+    margin-right: 55px;
+    overflow: auto;
+  }
+}

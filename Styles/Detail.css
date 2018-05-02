@@ -1,0 +1,74 @@
+.detail-container {
+  margin-left: 0;
+  margin-top: 35px;
+  padding-bottom: 2%;
+}
+
+.detail-image {
+  height: 400px;
+}
+
+.comic-detail-info {
+  padding-top: 20px;
+  padding-right: 35px;
+  font-size: 25px;
+}
+
+.button-container {
+  float: right;
+  padding-right: 30px;
+}
+
+.detail-information-container{
+  padding-top: 70px;
+}
+
+.comic-box {
+  display: flex;
+  justify-content: center;
+}
+
+.action-btn {
+  width: 120px;
+  height: 40px;
+  padding: 9px 12px;
+  border-color: black;
+}
+
+.action-btn:hover {
+  box-shadow: none;
+}
+
+.donate-btn {
+  background-color: #FFCC66;
+  color: black;
+  margin-right: 40px;
+}
+
+.donate-btn:hover {
+  background-color: #E4AD3F;
+  color: black;
+}
+
+@media screen and (min-width: 950px) {
+
+  .detail-container {
+    margin-left: 35px;
+  }
+
+  .comic-detail-info {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 0;
+    font-size: 25px;
+  }
+
+  .button-container {
+    float: right;
+    padding-right: 100px;
+  }
+ 
+  .detail-information-container{
+    width: 100%;
+  }
+}

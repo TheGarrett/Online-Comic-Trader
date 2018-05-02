@@ -15,6 +15,25 @@
   margin-right: 6%;
 }
 
+.vault-title-con {
+  display:flex; 
+  width:100%; 
+  padding-right: 16px;
+}
+
+.settingsIcon {
+  font-size: 35px;
+  color: black;
+  position: absolute;
+  margin-top: 20px;
+}
+
+.settingsIcon:hover {
+  text-decoration: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
 .comic-row {
   padding: 0;
   margin: 0;
@@ -37,6 +56,30 @@
   width: 150px;
 }
 
+.action-btn {
+  width: 120px;
+  height: 40px;
+  padding: 9px 12px;
+  border-color: black;
+}
+
+.read-title {
+  width: 100%;
+}
+
+.read-btn {
+  padding-top: 7px;
+  padding-right: 20px;
+}
+
+.action-btn:hover {
+  box-shadow: none;
+}
+
+.read-comic-container {
+  display: flex;
+}
+
 /* Desktop View */
 @media screen and (min-width: 950px) {
   .comic-column {
@@ -51,5 +94,10 @@
 
   .comic-box {
     width: 200px;
+  }
+
+  .read-btn {
+    padding-top: 7px;
+    padding-right: 7%;
   }
 }

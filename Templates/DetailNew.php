@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <title>Account</title>
+    <title>Comic Detail</title>
     <meta charset = "UTF-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../Styles/Structure.css">
     <link rel="stylesheet" href="../Styles/Grid.css">
-    <link rel="stylesheet" href="../Styles/Account.css">
+    <link rel="stylesheet" href="../Styles/Detail.css">
   </head>
   <body>
     <!-- Nav bar -->
@@ -34,10 +34,29 @@
           // Displays data in table brought back from query
           while($row = $result->fetch_assoc()) {
             echo "<h1>". $row["comic_title"] ."</h1>
-            <div class='account-container'>
-  
-              <label></label>
-              <span></span>
+            <div class='detail-container'>
+              <div class='row button-container'>
+                <a class='btn btn-primary action-btn' href='../PHP/read.php?comic_id=" .  $row["comic_id"] . "''>Mark as Read</a>
+              </div>
+              <div class='row detail-information-container'>
+                <div class='comic-box'>
+                  <img class='detail-image' id='". $row["comic_id"] ."' src='". $row["comic_cover"] ."' alt='". $row["comic_title"] ."'>
+                </div>
+                <div class='comic-detail-info'>
+                  <div>
+                    <label>Genre: </label>
+                    <span>". $row["comic_genre"] ."</span>
+                  </div>
+                  <div>
+                    <label>Lead Character: </label>
+                    <span>". $row["comic_lead_character"] ."</span>
+                  </div>
+                  <div>
+                    <label>Description: </label>
+                    <span>". $row["comic_description"] ."</span>
+                  </div>
+                </div>
+              </div>
             </div>";
           }
         } else {
