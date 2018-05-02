@@ -31,70 +31,32 @@
           <h2>New Comics</h2>
         </div>
         <div class="comic-row wrap">
-          <!-- Comic 1 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="https://static.comicvine.com/uploads/original/5/57023/2295988-wolverinebasics.jpg" alt="...">
-              </a>
-            </div>
-          </div>
-          <!-- Comic 2 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="https://static.comicvine.com/uploads/original/5/55074/1161661-x_men136.jpg" alt="...">
-              </a>
-            </div>
-          </div>
-          <!-- Comic 3 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="https://cdn.pastemagazine.com/www/system/images/photo_albums/bestcomiccovers2017/large/captainamerica695-chrissamnee.png?1384968217" alt="...">
-              </a>
-            </div>
-          </div>
-          <!-- Comic 4 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="http://media.comicbook.com/uploads1/2015/01/spider-man-1-cover-117628.jpg" alt="...">
-              </a>
-            </div>
-          </div>
-          <!-- Comic 1 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="https://static.comicvine.com/uploads/original/5/57023/2295988-wolverinebasics.jpg" alt="...">
-              </a>
-            </div>
-          </div>
-          <!-- Comic 2 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="https://static.comicvine.com/uploads/original/5/55074/1161661-x_men136.jpg" alt="...">
-              </a>
-            </div>
-          </div>
-          <!-- Comic 3 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="https://cdn.pastemagazine.com/www/system/images/photo_albums/bestcomiccovers2017/large/captainamerica695-chrissamnee.png?1384968217" alt="...">
-              </a>
-            </div>
-          </div>
-          <!-- Comic 4 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="http://media.comicbook.com/uploads1/2015/01/spider-man-1-cover-117628.jpg" alt="...">
-              </a>
-            </div>
-          </div>
+
+          <?php
+            session_start();
+            require './PHP/connection.php';
+
+            $UserID = $_SESSION['UserID'];
+
+            $sql = "SELECT * FROM comic_table WHERE owner='".$UserID."' ORDER BY comic_id";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+              // Displays data in table brought back from query
+              while($row = $result->fetch_assoc()) {
+                echo "<div class='column comic-column'>
+                  <div class='comic-box'>
+                    <a href='./Templates/Detail.php?comic_id=". $row["comic_id"] ."' class='thumbnail'>
+                      <img id='". $row["comic_id"] ."' src='". $row["comic_cover"] ."' alt='". $row["comic_title"] ."'>
+                    </a>
+                  </div>
+                </div>";
+              }
+            } else {
+              echo "<br />You don't have any new comics, please check again later!";
+            }
+          ?>
+
         </div>
       </div>
       
@@ -104,70 +66,7 @@
           <h2>Read Comics</h2>
         </div>
         <div class="comic-row wrap">
-          <!-- Comic 1 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="https://static.comicvine.com/uploads/original/5/57023/2295988-wolverinebasics.jpg" alt="...">
-              </a>
-            </div>
-          </div>
-          <!-- Comic 2 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="https://static.comicvine.com/uploads/original/5/55074/1161661-x_men136.jpg" alt="...">
-              </a>
-            </div>
-          </div>
-          <!-- Comic 3 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="https://cdn.pastemagazine.com/www/system/images/photo_albums/bestcomiccovers2017/large/captainamerica695-chrissamnee.png?1384968217" alt="...">
-              </a>
-            </div>
-          </div>
-          <!-- Comic 4 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="http://media.comicbook.com/uploads1/2015/01/spider-man-1-cover-117628.jpg" alt="...">
-              </a>
-            </div>
-          </div>
-          <!-- Comic 1 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="https://static.comicvine.com/uploads/original/5/57023/2295988-wolverinebasics.jpg" alt="...">
-              </a>
-            </div>
-          </div>
-          <!-- Comic 2 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="https://static.comicvine.com/uploads/original/5/55074/1161661-x_men136.jpg" alt="...">
-              </a>
-            </div>
-          </div>
-          <!-- Comic 3 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="https://cdn.pastemagazine.com/www/system/images/photo_albums/bestcomiccovers2017/large/captainamerica695-chrissamnee.png?1384968217" alt="...">
-              </a>
-            </div>
-          </div>
-          <!-- Comic 4 -->
-          <div class="column comic-column">
-            <div class="comic-box">
-              <a href="#" class="thumbnail">
-                <img src="http://media.comicbook.com/uploads1/2015/01/spider-man-1-cover-117628.jpg" alt="...">
-              </a>
-            </div>
-          </div>
+          
         </div>
       </div>
       

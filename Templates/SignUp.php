@@ -15,7 +15,7 @@
 
       <h1 class="sign-up-title">Sign Up</h1>
 
-      <form method="post" action="CreateAccount.php">
+      <form method="post" action="../PHP/create-account.php">
         <div class="row form-row">
           <div class="column">
             <div class="form-group">
@@ -32,23 +32,43 @@
           <div class="column question-2-container">
             <div class="form-group">
               <label for="exampleFormControlSelect2">Top comic character:</label>
-              <select multiple class="form-control" id="exampleFormControlSelect2">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+              <select class="form-control" name="comic_character">
+                <?php
+                  require '../PHP/connection.php';
+
+                  $sql = "SELECT DISTINCT comic_lead_character FROM comic_table";
+                  $result = $conn->query($sql);
+
+                  if ($result->num_rows > 0) {
+                    // Displays data in table brought back from query
+                    while($row = $result->fetch_assoc()) {
+                      echo "<option value='". $row["comic_lead_character"] ."'>". $row["comic_lead_character"] ."</option>";
+                    }
+                  } else {
+                    echo "<option>No Characters</option>";
+                  }
+                ?>
               </select>
             </div>
 
             <div class="form-group">
               <label for="exampleFormControlSelect2">Top comic genre:</label>
-              <select multiple class="form-control" id="exampleFormControlSelect2">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+              <select class="form-control" name="comic_genre">
+                <?php
+                  require '../PHP/connection.php';
+
+                  $sql = "SELECT DISTINCT comic_genre FROM comic_table";
+                  $result = $conn->query($sql);
+
+                  if ($result->num_rows > 0) {
+                    // Displays data in table brought back from query
+                    while($row = $result->fetch_assoc()) {
+                      echo "<option value='". $row["comic_genre"] ."'>". $row["comic_genre"] ."</option>";
+                    }
+                  } else {
+                    echo "<option>No Genres</option>";
+                  }
+                ?>
               </select>
             </div>
           </div>

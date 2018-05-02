@@ -1,3 +1,28 @@
+<?php
+  session_start();
+  require '../PHP/connection.php';
+
+  if (isset($_POST['email'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $sql = "SELECT * FROM user_table WHERE user_email='".$email."' AND user_password='".$password."' LIMIT 1";
+    $result = $conn->query($sql);
+    
+    $getUserID = "SELECT user_id FROM user_table WHERE user_email='".$email."'";
+    $query = mysqli_query($conn, $getUserID);
+    $row = mysqli_fetch_assoc($query);
+
+    if ($result->num_rows > 0) {
+      $_SESSION['UserID'] = $row['user_id'];
+      header('Location: ../index.php');
+      exit();
+    } else {
+      echo "Email or Password incorrect!";
+      exit();
+    }
+  }
+?>
+
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
